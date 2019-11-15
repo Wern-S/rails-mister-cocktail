@@ -1,5 +1,6 @@
+<%= render "components/banner" %>
+<div class="d-flex justify-content-center p-3">
 <% @cocktails.each do |cocktail| %>
-<h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
-    <% end %>
-
-<%= link_to 'Add yours!', new_cocktail_path %>
+<%= render "components/card", cocktail: cocktail %>
+<% end %>
+</div>

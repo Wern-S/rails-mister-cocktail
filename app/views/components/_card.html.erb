@@ -1,0 +1,15 @@
+<%= link_to cocktail_path(cocktail) do  %>
+  <div class="card-trip m-3">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <div class="card-trip-infos ">
+      <div>
+        <h2><%= cocktail.name %></h2>
+        <p>
+          <% cocktail.doses.each do |dose| %>
+            <%= "#{dose.description} de #{dose.ingredient.name}"%>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+<% end %>
