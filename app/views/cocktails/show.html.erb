@@ -2,5 +2,14 @@
 <h2> <%= "#{dose.description} de #{dose.ingredient.name}"%> <%= link_to '🗑️', dose_path(dose), method: :delete%> </h2>
 <% end %>
 
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :description %>
+  <%= f.association :ingredient %>
+
+  <%= f.button :submit, class: "btn-primary" %>
+  <% end %>
+
 <span class="btn btn-outline-secondary mt-3"> <%= link_to 'Add recipe', new_cocktail_dose_path(@cocktail) %> </span>
 <span class="btn btn-outline-secondary mt-3"> <%= link_to 'Cancel', cocktails_path %></span>
